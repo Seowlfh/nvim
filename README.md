@@ -9,4 +9,4 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
 
-Then, you can open Neovim and use the command `:Packer Sync` to synchronize the packages.
+Then, you can open Neovim and use the command `:PackerSync` to synchronize the packages.

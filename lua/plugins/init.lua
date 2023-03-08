@@ -121,4 +121,8 @@ return require('packer').startup(function(use)
             require("nvim-autopairs").setup {} 
         end
     }
+
+    use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+        require('plugins.toggleterm')
+    end}
 end)

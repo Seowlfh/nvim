@@ -4,11 +4,13 @@ return require('packer').startup(function(use)
 
     -- Colorscheme
     use ({ 
-        'lunarvim/Onedarker.nvim',
+        'navarasu/onedark.nvim',
         config = function()
             require('plugins.colorscheme')
         end,
     })
+    -- Show indentation lines
+    use "lukas-reineke/indent-blankline.nvim"
 
     -- Status Line
     use ({

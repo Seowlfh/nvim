@@ -1,3 +1,3 @@
-require("onedarker").setup()
+require('onedark').load()
 
-vim.cmd("colorscheme onedarker")
+

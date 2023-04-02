@@ -1,3 +1,3 @@
-mv ~/.config/nvim/init.lua init.lua
-mv ~/.config/nvim/lua lua
-mv ~/.config/nvim/plugin plugin
+cp ~/.config/nvim/init.lua .
+cp -r ~/.config/nvim/lua .
+cp -r ~/.config/nvim/plugin .

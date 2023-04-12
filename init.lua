@@ -1,3 +1,4 @@
+-- T:|M approved
 require("plugins")
 require("lsp")
 

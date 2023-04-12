@@ -50,13 +50,14 @@ return require('packer').startup(function(use)
             {'hrsh7th/cmp-nvim-lua'},     -- Optional
 
             -- Snippets
-            {'L3MON4D3/LuaSnip'},             -- Required
+            {
+                'L3MON4D3/LuaSnip',
+                tag = "v1.2.1"
+            }, -- Required
             {'rafamadriz/friendly-snippets'}, -- Optional
         },
     }
-    -- Call the lsp/init.lua ?
 
-    -- NOT WORKING ?
     -- Neovim comment
     use {
         'numToStr/Comment.nvim',
@@ -99,23 +100,6 @@ return require('packer').startup(function(use)
             require('plugins.orgmode')
         end
     }
-
-    -- Metals, a Scala LSP
-    use {
-        'scalameta/nvim-metals', 
-        requires = { "nvim-lua/plenary.nvim" }
-    }
-
-    -- VimTex
-    use { 
-        'lervag/vimtex',
-        config = function()
-            require('plugins.vimtex')
-        end
-    }
-
-    -- CMake Tools lookalike
-    use 'Civitasv/cmake-tools.nvim'
 
     use {
         'windwp/nvim-autopairs',

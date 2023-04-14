@@ -2,6 +2,15 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use ({ 'wbthomason/packer.nvim' })
 
+    -- Greeter
+    use {
+        'goolord/alpha-nvim',
+        lazy = false,
+        config = function ()
+            require('plugins.greeter')
+        end
+    }
+
     -- Colorscheme
     use ({ 
         'navarasu/onedark.nvim',

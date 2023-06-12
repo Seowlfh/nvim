@@ -1,9 +1,21 @@
--- Learn the keybindings, see :help lsp-zero-keybindings
--- Learn to configure LSP servers, see :help lsp-zero-api-showcase
-local lsp = require('lsp-zero')
-lsp.preset('recommended')
+-- Previous config
+-- local lsp = require('lsp-zero')
+-- lsp.preset('recommended')
+-- 
+-- lsp.setup()
 
-lsp.setup_servers({'nvim-metals'})
+local lsp = require('lsp-zero').preset({})
+
+lsp.on_attach(function(client, bufnr)
+  lsp.default_keymaps({buffer = bufnr})
+end)
+
+lsp.ensure_installed({
+  -- Replace these with whatever servers you want to install
+  'clangd',
+  'ltex',
+  'pylsp',
+})
 
 lsp.setup()
 

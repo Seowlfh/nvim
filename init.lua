@@ -15,7 +15,7 @@ vim.opt.smartcase = true -- Case sensitive search if the query contains upper ca
 
 -- Interface
 vim.opt.number = true
-vim.opt.relativenumber = true 
+vim.opt.relativenumber = true
 vim.opt.colorcolumn = "80" -- Highlight column 80
 vim.opt.cursorline = true -- Highlight current line
 vim.opt.scrolloff = 10
@@ -46,3 +46,10 @@ vim.filetype.add = ({
 vim.opt.mouse = a -- Enable mouse support
 vim.opt.list = true -- Enable listchars
 vim.opt.listchars = { tab = "»·", trail = "¤" } -- Indicators for invisible characters
+
+-- Autocmd
+vim.api.nvim_create_autocmd("BufWritePre", { pattern = "*", command = [[%s/\s\+$//e"]]})
+
+-- Functionnalities
+-- vim.opt.foldmethod = "syntax"
+vim.opt.clipboard = "unnamedplus"

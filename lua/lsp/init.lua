@@ -1,7 +1,7 @@
 -- Previous config
 -- local lsp = require('lsp-zero')
 -- lsp.preset('recommended')
--- 
+--
 -- lsp.setup()
 
 local lsp = require('lsp-zero').preset({})
@@ -15,6 +15,7 @@ lsp.ensure_installed({
   'clangd',
   'ltex',
   'pylsp',
+  'jdtls',
 })
 
 lsp.setup()

@@ -12,7 +12,7 @@ return require('packer').startup(function(use)
     }
 
     -- Colorscheme
-    use ({ 
+    use ({
         'navarasu/onedark.nvim',
         config = function()
             require('plugins.colorscheme')
@@ -32,7 +32,7 @@ return require('packer').startup(function(use)
 
     -- Telescope
     use ({
-        'nvim-telescope/telescope.nvim', 
+        'nvim-telescope/telescope.nvim',
         tag = '0.1.1', -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'}, },
         config = function()
@@ -76,9 +76,9 @@ return require('packer').startup(function(use)
     }
 
     -- NeoGit <3
-    use { 
-        'TimUntersberger/neogit', 
-        requires = 'nvim-lua/plenary.nvim' 
+    use {
+        'TimUntersberger/neogit',
+        requires = 'nvim-lua/plenary.nvim'
     }
 
 
@@ -104,7 +104,7 @@ return require('packer').startup(function(use)
 
     -- Orgmode
     use {
-        'nvim-orgmode/orgmode', 
+        'nvim-orgmode/orgmode',
         config = function()
             require('plugins.orgmode')
         end
@@ -112,19 +112,19 @@ return require('packer').startup(function(use)
 
     use {
         'windwp/nvim-autopairs',
-        config = function() 
-            require("nvim-autopairs").setup {} 
+        config = function()
+            require("nvim-autopairs").setup {}
         end
     }
 
     use {
-        "akinsho/toggleterm.nvim", tag = '*', 
+        "akinsho/toggleterm.nvim", tag = '*',
 	config = function()
             require('plugins.toggleterm')
     	end
     }
 
-    use { 
+    use {
         'lervag/vimtex',
         config = function()
             require('plugins.vimtex')

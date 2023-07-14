@@ -76,10 +76,7 @@ return require('packer').startup(function(use)
     }
 
     -- NeoGit <3
-    use {
-        'TimUntersberger/neogit',
-        requires = 'nvim-lua/plenary.nvim'
-    }
+    use { 'NeogitOrg/neogit', requires = 'nvim-lua/plenary.nvim', config = function() require('neogit').setup() end }
 
 
     -- Surround

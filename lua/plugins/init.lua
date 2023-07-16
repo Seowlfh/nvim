@@ -1,6 +1,25 @@
 return require('packer').startup(function(use)
+    -- Local development of plugins
+    use "/home/teto/programming/neovim-apm/"
+
     -- Packer can manage itself
     use ({ 'wbthomason/packer.nvim' })
+
+    -- Snippet
+    use({
+        "L3MON4D3/LuaSnip",
+        -- follow latest release.
+        tag = "v<CurrentMajor>.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+        -- install jsregexp (optional!:).
+        run = "make install_jsregexp"
+    })
+
+    -- Autocomplete
+    use 'neovim/nvim-lspconfig'
+    use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-buffer'
 
     -- Greeter
     use {
@@ -39,33 +58,6 @@ return require('packer').startup(function(use)
             require("plugins.telescope")
         end,
     })
-
-    -- Configurations for Nvim LSP
-    use {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v1.x',
-        requires = {
-            -- LSP Support
-            {'neovim/nvim-lspconfig'},             -- Required
-            {'williamboman/mason.nvim'},           -- Optional
-            {'williamboman/mason-lspconfig.nvim'}, -- Optional
-
-            -- Autocompletion
-            {'hrsh7th/nvim-cmp'},         -- Required
-            {'hrsh7th/cmp-nvim-lsp'},     -- Required
-            {'hrsh7th/cmp-buffer'},       -- Optional
-            {'hrsh7th/cmp-path'},         -- Optional
-            {'saadparwaiz1/cmp_luasnip'}, -- Optional
-            {'hrsh7th/cmp-nvim-lua'},     -- Optional
-
-            -- Snippets
-            {
-                'L3MON4D3/LuaSnip',
-                tag = "v1.2.1"
-            }, -- Required
-            {'rafamadriz/friendly-snippets'}, -- Optional
-        },
-    }
 
     -- Neovim comment
     use {

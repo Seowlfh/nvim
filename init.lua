@@ -36,11 +36,11 @@ vim.opt.autowrite = true -- Automatically write file on some commands (like :mak
 vim.opt.hidden = true -- Keeps buffers hidden when closed
 vim.opt.backup = false
 vim.opt.swapfile = false
-vim.filetype.add = ({
-	extension = {
-		h = "c"
-	}
-})
+-- vim.filetype.add = ({
+-- 	extension = {
+-- 		h = "c"
+-- 	}
+-- })
 
 -- Miscellaneaous
 vim.opt.mouse = a -- Enable mouse support
@@ -53,3 +53,6 @@ vim.api.nvim_create_autocmd("BufWritePre", { pattern = "*", command = [[%s/\s\+$
 -- Functionnalities
 -- vim.opt.foldmethod = "syntax"
 vim.opt.clipboard = "unnamedplus"
+
+-- Keybinds
+vim.g.mapleader = ' '

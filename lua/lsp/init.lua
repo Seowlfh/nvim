@@ -6,9 +6,9 @@ end
 
 local function on_attach(bufnr)
     setKeymap("n", "K", vim.lsp.buf.hover, {})
-    setKeymap("n", "gd", vim.lsp.buf.definition, {})
-    setKeymap("n", "gi", vim.lsp.buf.implementation, {})
-    setKeymap("n", "gt", vim.lsp.buf.type_definition, {})
+    setKeymap("n", "<leader>gd", vim.lsp.buf.definition, {})
+    setKeymap("n", "<leader>gi", vim.lsp.buf.implementation, {})
+    setKeymap("n", "<leader>gt", vim.lsp.buf.type_definition, {})
     setKeymap("n", "<leader>df", vim.diagnostic.goto_next, {})
     setKeymap("n", "<leader>dp", vim.diagnostic.goto_prev, {})
     setKeymap("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>", {})
@@ -38,7 +38,7 @@ local cmp = require'cmp'
 cmp.setup({
     snippet = {
         expand = function(args)
-            equire('luasnip').lsp_expand(args.body)
+            require('luasnip').lsp_expand(args.body)
         end,
     },
     window = {

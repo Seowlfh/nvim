@@ -11,7 +11,10 @@ return require('packer').startup(function(use)
         -- follow latest release.
         tag = "v<CurrentMajor>.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
         -- install jsregexp (optional!:).
-        run = "make install_jsregexp"
+        run = "make install_jsregexp",
+        config = function ()
+            require('plugins.luasnip')
+        end
     })
 
     -- Autocomplete
@@ -37,6 +40,8 @@ return require('packer').startup(function(use)
             require('plugins.colorscheme')
         end,
     })
+
+
     -- Show indentation lines
     use "lukas-reineke/indent-blankline.nvim"
 

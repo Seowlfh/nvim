@@ -21,7 +21,6 @@ vim.opt.colorcolumn = "80" -- Highlight column 80
 vim.opt.cursorline = true -- Highlight current line
 vim.opt.scrolloff = 10
 vim.opt.signcolumn = "yes"
--- vim.opt.nowrap -- Disable line wrapping
 vim.opt.termguicolors = true
 vim.opt.showmode = false -- Display keystrokes
 vim.opt.showcmd = true -- Show command while typing
@@ -45,8 +44,8 @@ vim.opt.swapfile = false
 
 -- Miscellaneaous
 vim.opt.mouse = a -- Enable mouse support
-vim.opt.list = true -- Enable listchars
-vim.opt.listchars = { tab = "»·", trail = "¤" } -- Indicators for invisible characters
+vim.opt.list = false -- Enable listchars
+-- vim.opt.listchars = { tab = "»·", trail = "¤" } -- Indicators for invisible characters
 
 -- Autocmd
 -- vim.api.nvim_create_autocmd("BufWritePre", { pattern = "*", command = [[%s/\s\+$//e"]]})
@@ -57,6 +56,8 @@ vim.opt.clipboard = "unnamedplus"
 
 -- Keybinds
 vim.g.mapleader = ' '
+
+vim.keymap.set('n', '<C-t>', ':NvimTreeToggle <CR>', {silent = true, noremap = true})
 
 -- Kitty autocommands to change padding/background when entering Neovim
 local kitty_mp = vim.api.nvim_create_augroup("kitty_mp", { clear = true })

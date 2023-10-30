@@ -18,7 +18,14 @@ end
 
 local servers = {
     clangd = {},
-    cmake = {}
+    cmake = {},
+    rust_analyzer = {
+        ['rust-analyzer'] = {
+            diagnostics = {
+                enable = false;
+            }
+        },
+    }
 }
 
 local lspconfig = require('lspconfig')

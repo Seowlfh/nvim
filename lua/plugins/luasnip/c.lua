@@ -115,4 +115,12 @@ return {
         i(0),
         t({"", "}"})
     }),
+
+    s("jdoc", {
+        t({"/**", " * @brief "}),
+        i(1, "Brief description"),
+        t({"", " *", " * "}),
+        i(2, "More detailed description"),
+        t({"", " */", ""}),
+    })
 }

@@ -51,7 +51,6 @@ return require('packer').startup(function(use)
         end
     })
 
-
     -- Show indentation lines
     use ({
         "lukas-reineke/indent-blankline.nvim",
@@ -87,7 +86,7 @@ return require('packer').startup(function(use)
         end
     }
 
-    -- NeoGit <3
+    -- NeoGit <3 <3 <3
     use { 'NeogitOrg/neogit', requires = 'nvim-lua/plenary.nvim', config = function() require('neogit').setup() end }
 
 

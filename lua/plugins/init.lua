@@ -55,7 +55,8 @@ return require('packer').startup(function(use)
     use ({
         "lukas-reineke/indent-blankline.nvim",
         config = function()
-            require("ibl").setup()
+            require("ibl").setup({
+            })
         end
     })
 
@@ -88,7 +89,6 @@ return require('packer').startup(function(use)
 
     -- NeoGit <3 <3 <3
     use { 'NeogitOrg/neogit', requires = 'nvim-lua/plenary.nvim', config = function() require('neogit').setup() end }
-
 
     -- Surround
     use({
@@ -130,5 +130,13 @@ return require('packer').startup(function(use)
         config = function()
             require('plugins.vimtex')
         end
+    }
+
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = { 'nvim-tree/nvim-web-devicons' },
+        config = function()
+	    require('plugins.nvimtree')
+	end
     }
 end)

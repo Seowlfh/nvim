@@ -34,10 +34,10 @@ vim.keymap.set( "i" , "<c-l>", function()
 end)
 
 -- Reload luasnip
-vim.keymap.set("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/lua/plugins/luasnip.lua<CR>")
+vim.keymap.set("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/lua/plugins/luasnip/init.lua<CR>")
 
 
-for _, lang in pairs({"nix", "lua", "c"}) do
+for _, lang in pairs({"nix", "lua", "c", "jsonc"}) do
     ls.add_snippets(lang, require("plugins.luasnip." .. lang))
 end
 

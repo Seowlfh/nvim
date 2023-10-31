@@ -1,11 +1,11 @@
 return require('packer').startup(function(use)
     -- Local development of plugins 
-    use {
-        '/home/teto/programming/neovim-apm',
-        config = function ()
-            require('plugins.neovim-apm')
-        end
-    }
+    -- use {
+    --     '/home/teto/programming/neovim-apm',
+    --     config = function ()
+    --         require('plugins.neovim-apm')
+    --     end
+    -- }
     -- use {
     --     'Seowlfh/neovim-apm',
     --     config = function ()
@@ -16,25 +16,7 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use ({ 'wbthomason/packer.nvim' })
 
-    -- Snippet
-    use({
-        "L3MON4D3/LuaSnip",
-        requires = 'saadparwaiz1/cmp_luasnip',
-        -- install jsregexp (optional!:).
-        run = "make install_jsregexp",
-        config = function ()
-            require('plugins.luasnip')
-        end
-    })
-
-    -- Autocomplete
-    use 'neovim/nvim-lspconfig'
-    use 'hrsh7th/nvim-cmp'
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/cmp-buffer'
-
-    -- Greeter
+    -- UI
     use {
         'goolord/alpha-nvim',
         lazy = false,
@@ -43,7 +25,6 @@ return require('packer').startup(function(use)
         end
     }
 
-    -- Colorscheme
     use ({
         'Shatur/neovim-ayu',
         config = function()
@@ -51,55 +32,34 @@ return require('packer').startup(function(use)
         end
     })
 
-    -- Show indentation lines
     use ({
         "lukas-reineke/indent-blankline.nvim",
         config = function()
             require("ibl").setup({
+                scope = { enabled = false }
             })
         end
     })
 
-    -- Status Line
     use ({
         'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+        requires = { 'nvim-tree/nvim-web-devicons' },
         config = function()
             require("plugins.statusline")
         end,
     })
 
-    -- Telescope
-    use ({
-        'nvim-telescope/telescope.nvim',
-        tag = '0.1.1', -- or                            , branch = '0.1.x',
-        requires = { {'nvim-lua/plenary.nvim'}, },
+    use { 
+        'alvarosevilla95/luatab.nvim', 
+        requires = { 'nvim-tree/nvim-web-devicons' },
         config = function()
-            require("plugins.telescope")
+            require('luatab').setup()
         end,
-    })
-
-    -- Neovim comment
-    use {
-        'numToStr/Comment.nvim',
-        config = function()
-            require('Comment').setup()
-        end
     }
 
     -- NeoGit <3 <3 <3
     use { 'NeogitOrg/neogit', requires = 'nvim-lua/plenary.nvim', config = function() require('neogit').setup() end }
 
-    -- Surround
-    use({
-        "kylechui/nvim-surround",
-        tag = "*", -- Use for stability; omit to use `main` branch for the latest features
-        config = function()
-            require("nvim-surround").setup({
-                -- Configuration here, or leave empty to use defaults
-            })
-        end
-    })
 
     -- Treesitter
     use {
@@ -119,13 +79,6 @@ return require('packer').startup(function(use)
     }
 
     use {
-        'windwp/nvim-autopairs',
-        config = function()
-            require("nvim-autopairs").setup {}
-        end
-    }
-
-    use {
         'lervag/vimtex',
         config = function()
             require('plugins.vimtex')
@@ -139,4 +92,65 @@ return require('packer').startup(function(use)
 	    require('plugins.nvimtree')
 	end
     }
+
+    -- Editing
+    use({
+        "kylechui/nvim-surround",
+        tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+        config = function()
+            require("nvim-surround").setup({
+                -- Configuration here, or leave empty to use defaults
+            })
+        end
+    })
+
+    use {
+        'jinh0/eyeliner.nvim',
+        config = function()
+            require'eyeliner'.setup {
+                highlight_on_key = true,
+                dim = true,
+            }
+        end
+    }
+
+    use {
+        'windwp/nvim-autopairs',
+        config = function()
+            require("nvim-autopairs").setup()
+        end
+    }
+
+    use({
+        "L3MON4D3/LuaSnip",
+        requires = 'saadparwaiz1/cmp_luasnip',
+        -- install jsregexp (optional!:).
+        run = "make install_jsregexp",
+        config = function ()
+            require('plugins.luasnip')
+        end
+    })
+
+    use ({
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.1', -- or                            , branch = '0.1.x',
+        requires = { {'nvim-lua/plenary.nvim'}, },
+        config = function()
+            require("plugins.telescope")
+        end,
+    })
+
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
+
+    -- Auocomplete
+    use 'neovim/nvim-lspconfig'
+    use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-buffer'
 end)

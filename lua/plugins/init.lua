@@ -14,7 +14,7 @@ return require('packer').startup(function(use)
     -- }
 
     -- Packer can manage itself
-    use ({ 'wbthomason/packer.nvim' })
+    use { 'wbthomason/packer.nvim' }
 
     -- UI
     use {
@@ -25,29 +25,29 @@ return require('packer').startup(function(use)
         end
     }
 
-    use ({
+    use {
         'Shatur/neovim-ayu',
         config = function()
             require('plugins.colorscheme')
         end
-    })
+    }
 
-    use ({
+    use {
         "lukas-reineke/indent-blankline.nvim",
         config = function()
             require("ibl").setup({
                 scope = { enabled = false }
             })
         end
-    })
+    }
 
-    use ({
+    use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons' },
         config = function()
             require("plugins.statusline")
         end,
-    })
+    }
 
     use { 
         'alvarosevilla95/luatab.nvim', 
@@ -94,7 +94,7 @@ return require('packer').startup(function(use)
     }
 
     -- Editing
-    use({
+    use{
         "kylechui/nvim-surround",
         tag = "*", -- Use for stability; omit to use `main` branch for the latest features
         config = function()
@@ -102,7 +102,7 @@ return require('packer').startup(function(use)
                 -- Configuration here, or leave empty to use defaults
             })
         end
-    })
+    }
 
     use {
         'jinh0/eyeliner.nvim',
@@ -121,7 +121,7 @@ return require('packer').startup(function(use)
         end
     }
 
-    use({
+    use{
         "L3MON4D3/LuaSnip",
         requires = 'saadparwaiz1/cmp_luasnip',
         -- install jsregexp (optional!:).
@@ -129,16 +129,16 @@ return require('packer').startup(function(use)
         config = function ()
             require('plugins.luasnip')
         end
-    })
+    }
 
-    use ({
+    use {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.1', -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'}, },
         config = function()
             require("plugins.telescope")
         end,
-    })
+    }
 
     use {
         'numToStr/Comment.nvim',

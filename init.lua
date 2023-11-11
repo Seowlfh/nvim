@@ -57,7 +57,7 @@ vim.opt.clipboard = "unnamedplus"
 -- Keybinds
 vim.g.mapleader = ' '
 
-vim.keymap.set('n', '<C-t>', ':NvimTreeToggle <CR>', {silent = true, noremap = true})
+vim.keymap.set('n', '<leader>ot', ':NvimTreeToggle <CR>', {silent = true, noremap = true})
 
 -- Kitty autocommands to change padding/background when entering Neovim
 local kitty_mp = vim.api.nvim_create_augroup("kitty_mp", { clear = true })

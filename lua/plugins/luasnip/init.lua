@@ -37,7 +37,7 @@ end)
 vim.keymap.set("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/lua/plugins/luasnip/init.lua<CR>")
 
 
-for _, lang in pairs({"nix", "lua", "c", "jsonc"}) do
+for _, lang in pairs({"nix", "lua", "c", "jsonc", "tex"}) do
     ls.add_snippets(lang, require("plugins.luasnip." .. lang))
 end
 

@@ -6,8 +6,7 @@ local fmt = require("luasnip.extras.fmt").fmt
 local rep = require("luasnip.extras").rep
 
 return {
-    s("shell", fmt(
-    [[
+    s("shell", fmt([[
       with import <nixpkgs> {{ }};
 
       mkShell {{

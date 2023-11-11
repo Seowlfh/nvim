@@ -17,7 +17,7 @@ local function my_on_attach(bufnr)
   api.config.mappings.default_on_attach(bufnr)
 
   -- remove mappings
-  vim.keymap.del('n', '<C-t>', {buffer = bufnr})
+  -- vim.keymap.del('n', '<C-t>', {buffer = bufnr})
 
 end
 
@@ -31,6 +31,6 @@ require("nvim-tree").setup({
     group_empty = true,
   },
   filters = {
-    dotfiles = true,
+    git_ignored = false,
   },
 })

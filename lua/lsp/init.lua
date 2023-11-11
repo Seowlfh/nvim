@@ -25,7 +25,11 @@ local servers = {
                 enable = false;
             }
         },
-    }
+    },
+    nil_ls = {},
+    pyright = {},
+    lua_ls = {},
+    texlab = {}
 }
 
 local lspconfig = require('lspconfig')

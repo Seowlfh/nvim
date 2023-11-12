@@ -107,10 +107,17 @@ return require('packer').startup(function(use)
     use {
         'jinh0/eyeliner.nvim',
         config = function()
-            require'eyeliner'.setup {
+            vim.api.nvim_create_autocmd({'FileType'}, {
+                pattern = 'NeogitStatus',
+                callback = function()
+                    cmd ':EyelinerDisable'
+                end
+            }) 
+
+            require('eyeliner').setup({
                 highlight_on_key = true,
                 dim = true,
-            }
+            })
         end
     }
 

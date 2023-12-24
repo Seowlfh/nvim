@@ -44,8 +44,8 @@ vim.opt.swapfile = false
 
 -- Miscellaneaous
 vim.opt.mouse = a -- Enable mouse support
-vim.opt.list = false -- Enable listchars
--- vim.opt.listchars = { tab = "»·", trail = "¤" } -- Indicators for invisible characters
+vim.opt.list = true -- Enable listchars
+vim.opt.listchars = { tab = "➞ ", trail = "·" } -- Indicators for invisible characters
 
 -- Autocmd
 -- vim.api.nvim_create_autocmd("BufWritePre", { pattern = "*", command = [[%s/\s\+$//e"]]})

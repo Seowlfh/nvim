@@ -1,4 +1,3 @@
-
 local function setKeymap(mode, keymap, fn, opts)
     opts.buffer = 0
     vim.keymap.set(mode, keymap, fn, opts)
@@ -11,6 +10,7 @@ local function on_attach(bufnr)
     setKeymap("n", "<leader>gt", vim.lsp.buf.type_definition, {})
     setKeymap("n", "<leader>df", vim.diagnostic.goto_next, {})
     setKeymap("n", "<leader>dp", vim.diagnostic.goto_prev, {})
+    setKeymap("n", "<leader>ds", vim.diagnostic.open_float, {})
     setKeymap("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>", {})
     setKeymap("n", "<leader>gr", "<cmd>Telescope lsp_references<cr>", {})
     setKeymap("n", "<leader>r", vim.lsp.buf.rename, {})
@@ -29,7 +29,16 @@ local servers = {
     nil_ls = {},
     pyright = {},
     lua_ls = {},
-    texlab = {}
+    texlab = {},
+    ocamllsp = {
+        settings = {
+            codelens = { enable = true },
+            extendedHover = { enable = true },
+        }
+    },
+    hls = {
+        filetypes = { 'haskell', 'lhaskell', 'cabal' },
+    },
 }
 
 local lspconfig = require('lspconfig')

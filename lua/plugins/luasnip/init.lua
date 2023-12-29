@@ -1,46 +1,55 @@
-local ls = require "luasnip"
-local types = require "luasnip.util.types"
+return {
+    {
+        "L3MON4D3/LuaSnip",
+        build = "make install_jsregexp",
+        config = function ()
+            local ls = require "luasnip"
 
-ls.setup({
-    -- Remember the last snippet so you can jump back if you made a mistake
-    history = true,
-    -- To allow for dynamic snippets
-    update_events = { "TextChanged" , "TextChangedI"},
-})
+            local types = require "luasnip.util.types"
 
---
--- Keymaps
---
+            ls.setup({
+                -- Remember the last snippet so you can jump back if you made a mistake
+                history = true,
+                -- To allow for dynamic snippets
+                update_events = { "TextChanged" , "TextChangedI"},
+            })
 
--- Expand
-vim.keymap.set({ "i", "s" }, "<c-k>", function()
-    if ls.expand_or_jumpable() then
-        ls.expand_or_jump()
-    end
-end, { silent = true })
+            --
+            -- Keymaps
+            --
 
--- Jump backward
-vim.keymap.set({ "i", "s" }, "<c-j>", function()
-    if ls.jumpable(-1) then
-        ls.jump(-1)
-    end
-end, { silent = true })
+            -- Expand
+            vim.keymap.set({ "i", "s" }, "<c-k>", function()
+                if ls.expand_or_jumpable() then
+                    ls.expand_or_jump()
+                end
+            end, { silent = true })
 
--- Cycle through choices
-vim.keymap.set( "i" , "<c-l>", function()
-    if ls.choice_active() then
-        ls.change_choice(-1)
-    end
-end)
+            -- Jump backward
+            vim.keymap.set({ "i", "s" }, "<c-j>", function()
+                if ls.jumpable(-1) then
+                    ls.jump(-1)
+                end
+            end, { silent = true })
 
--- Reload luasnip
-vim.keymap.set("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/lua/plugins/luasnip/init.lua<CR>")
+            -- Cycle through choices
+            vim.keymap.set( "i" , "<c-l>", function()
+                if ls.choice_active() then
+                    ls.change_choice(-1)
+                end
+            end)
 
-
-for _, lang in pairs({"nix", "lua", "c", "jsonc", "tex"}) do
-    ls.add_snippets(lang, require("plugins.luasnip." .. lang))
-end
-
-ls.add_snippets("cpp", require("plugins.luasnip.c"))
+            -- Reload luasnip
+            vim.keymap.set("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/lua/plugins/luasnip/init.lua<CR>")
 
 
+            for _, lang in pairs({"nix", "lua", "c", "jsonc", "tex"}) do
+                ls.add_snippets(lang, require("plugins.luasnip." .. lang))
+            end
+
+            ls.add_snippets("cpp", require("plugins.luasnip.c"))
+
+
+        end
+    },
+}

@@ -6,12 +6,12 @@ return {
     {
         'jinh0/eyeliner.nvim',
         config = function()
-            vim.api.nvim_create_autocmd({'FileType'}, {
-                pattern = 'NeogitStatus',
-                callback = function()
-                    cmd ':EyelinerDisable'
-                end
-            }) 
+            -- vim.api.nvim_create_autocmd({'FileType'}, {
+            --     pattern = 'NeogitStatus',
+            --     callback = function()
+            --         cmd ':EyelinerDisable'
+            --     end
+            -- }) 
             require('eyeliner').setup({
                 highlight_on_key = true,
                 dim = true,

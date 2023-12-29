@@ -57,10 +57,6 @@ return {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         config = function()
-            local function hello()
-                return [[hello world]]
-            end
-
             require('lualine').setup {
                 options = {
                     icons_enabled = true,
@@ -68,7 +64,7 @@ return {
                     component_separators = { left = '', right = ''},
                     section_separators = { left = '', right = ''},
                     disabled_filetypes = {
-                        statusline = { "alpha" },
+                        statusline = { "alpha", "NeogitStatus" },
                         winbar = {},
                     },
                     ignore_focus = {},

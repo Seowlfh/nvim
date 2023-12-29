@@ -31,20 +31,10 @@ vim.opt.autowrite = true -- Automatically write file on some commands (like :mak
 vim.opt.hidden = true -- Keeps buffers hidden when closed
 vim.opt.backup = false
 vim.opt.swapfile = false
--- vim.filetype.add = ({
--- 	extension = {
--- 		h = "c"
--- 	}
--- })
 
 -- Miscellaneaous
 vim.opt.mouse = a -- Enable mouse support
 vim.opt.list = true -- Enable listchars
 vim.opt.listchars = { tab = "➞ ", trail = "·" } -- Indicators for invisible characters
 
--- Autocmd
--- vim.api.nvim_create_autocmd("BufWritePre", { pattern = "*", command = [[%s/\s\+$//e"]]})
-
--- Functionnalities
--- vim.opt.foldmethod = "syntax"
 vim.opt.clipboard = "unnamedplus"

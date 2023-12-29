@@ -27,7 +27,6 @@ local servers = {
         },
     },
     nil_ls = {},
-    pyright = {},
     lua_ls = {},
     texlab = {},
     ocamllsp = {

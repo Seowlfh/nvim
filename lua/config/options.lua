@@ -24,6 +24,7 @@ vim.opt.wildmenu = true -- Better tab completion while typing commands
 vim.opt.scrolloff = 10 -- Always keep 10 line visiblie above or under the cursor
 vim.opt.splitbelow = true -- Split below the current window
 vim.opt.splitright = true -- Split right of the current window
+vim.opt.wrap = false
 
 -- File
 vim.opt.autoread = true -- Re-read file when it has been changed outside of vim

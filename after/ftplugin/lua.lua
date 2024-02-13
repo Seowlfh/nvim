@@ -3,8 +3,6 @@ vim.bo.formatprg = "stylua --search-parent-directories - 2>/dev/null"
 
 local autogrp_name = "Lua Format"
 
--- require("utils").setup(autogrp_name, { "*.lua" })
-
 local augroup = vim.api.nvim_create_augroup(autogrp_name, {})
 
 vim.api.nvim_clear_autocmds({ group = augroup })

@@ -2,6 +2,9 @@ return {
     -- Editing
     {
         "kylechui/nvim-surround",
+        config = function()
+            require("nvim-surround").setup()
+        end,
     },
     {
         "jinh0/eyeliner.nvim",

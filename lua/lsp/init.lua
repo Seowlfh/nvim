@@ -43,6 +43,8 @@ local servers = {
             filetypes = { "haskell", "lhaskell", "cabal" },
         },
     },
+    dockerls = {},
+    docker_compose_language_service = {},
 }
 
 local lspconfig = require("lspconfig")
@@ -50,7 +52,7 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 for server, config in pairs(servers) do
     lspconfig[server].setup({
-        on_attach = config.on_attach,
+        on_attach = on_attach,
         settings = config.settings,
         capabilities = config.capabilities,
         on_init = config.on_init,

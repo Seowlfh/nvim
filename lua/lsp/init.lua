@@ -5,7 +5,7 @@ end
 
 local function on_attach(bufnr)
     setKeymap("n", "K", vim.lsp.buf.hover, {})
-    setKeymap("n", "<C-k>", vim.lsp.buf.signature_help, {})
+    setKeymap("n", "<leader>sg", vim.lsp.buf.signature_help, {})
     setKeymap("n", "<leader>gd", vim.lsp.buf.definition, {})
     setKeymap("n", "<leader>gi", vim.lsp.buf.implementation, {})
     setKeymap("n", "<leader>gt", vim.lsp.buf.type_definition, {})
@@ -95,3 +95,6 @@ cmp.setup.filetype("gitcommit", {
         { name = "buffer" },
     }),
 })
+
+-- Setup UI
+require("lsp.ui").setup_signs()

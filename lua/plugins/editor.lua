@@ -23,30 +23,12 @@ return {
             })
         end,
     },
-    -- Orgmode
     {
-        "nvim-orgmode/orgmode",
-        config = function()
-            -- Load custom treesitter grammar for org filetype
-            require("orgmode").setup_ts_grammar()
-
-            -- Treesitter configuration
-            require("nvim-treesitter.configs").setup({
-                -- If TS highlights are not enabled at all, or disabled via `disable` prop,
-                -- highlighting will fallback to default Vim syntax highlighting
-                highlight = {
-                    enable = true,
-                    -- Required for spellcheck, some LaTex highlights and
-                    -- code block highlights that do not have ts grammar
-                    additional_vim_regex_highlighting = { "org" },
-                },
-                ensure_installed = { "org" }, -- Or run :TSUpdate org
-            })
-
-            require("orgmode").setup({
-                org_agenda_files = { "~/Dropbox/org/*", "~/my-orgs/**/*" },
-                org_default_notes_file = "~/Dropbox/org/refile.org",
-            })
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        ft = { "markdown" },
+        build = function()
+            vim.fn["mkdp#util#install"]()
         end,
     },
     {
@@ -116,20 +98,20 @@ return {
             vim.keymap.set("n", "<leader>a", function()
                 harpoon:list():append()
             end)
-            vim.keymap.set("n", "<C-e>", function()
+            vim.keymap.set("n", "<leader>al", function()
                 harpoon.ui:toggle_quick_menu(harpoon:list())
             end)
 
-            vim.keymap.set("n", "<C-h>", function()
+            vim.keymap.set("n", "<leader>h", function()
                 harpoon:list():select(1)
             end)
-            vim.keymap.set("n", "<C-j>", function()
+            vim.keymap.set("n", "<leader>j", function()
                 harpoon:list():select(2)
             end)
-            vim.keymap.set("n", "<C-k>", function()
+            vim.keymap.set("n", "<leader>k", function()
                 harpoon:list():select(3)
             end)
-            vim.keymap.set("n", "<C-l>", function()
+            vim.keymap.set("n", "<leader>l", function()
                 harpoon:list():select(4)
             end)
             --
@@ -152,5 +134,13 @@ return {
             vim.api.nvim_set_keymap("n", "<leader>qj", "<Plug>(qf_qf_switch)", {})
             vim.api.nvim_set_keymap("n", "<leader>qt", "<Plug>(qf_qf_toggle)", {})
         end,
+    },
+    {
+        "akinsho/toggleterm.nvim",
+        version = "*",
+        opts = {
+            size = 20,
+            open_mapping = [[<leader>to]],
+        },
     },
 }

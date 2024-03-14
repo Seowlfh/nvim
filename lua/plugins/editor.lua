@@ -24,14 +24,6 @@ return {
         end,
     },
     {
-        "iamcco/markdown-preview.nvim",
-        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-        ft = { "markdown" },
-        build = function()
-            vim.fn["mkdp#util#install"]()
-        end,
-    },
-    {
         "lervag/vimtex",
         config = function()
             -- Viewer options: One may configure the viewer either by specifying a built-in

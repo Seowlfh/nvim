@@ -132,7 +132,6 @@ return {
         version = "*",
         opts = {
             size = 20,
-            open_mapping = [[<leader>to]],
         },
     },
 }

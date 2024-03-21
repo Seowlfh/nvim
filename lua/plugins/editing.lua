@@ -53,12 +53,15 @@ return {
     {
         "neovim/nvim-lspconfig",
         dependencies = {
-            "folke/neodev.nvim",
-            dependencies = { "hrsh7th/nvim-cmp" },
-            opts = {},
-            config = function(opts)
-                require("neodev").setup(opts)
-            end,
+            "L3MON4D3/LuaSnip",
+            {
+                "folke/neodev.nvim",
+                dependencies = { "hrsh7th/nvim-cmp" },
+                opts = {},
+                config = function(opts)
+                    require("neodev").setup(opts)
+                end,
+            },
         },
         config = function()
             require("lsp")

@@ -45,6 +45,7 @@ local servers = {
     },
     dockerls = {},
     docker_compose_language_service = {},
+    pyright = {},
 }
 
 local lspconfig = require("lspconfig")
@@ -54,18 +55,19 @@ for server, config in pairs(servers) do
     lspconfig[server].setup({
         on_attach = on_attach,
         settings = config.settings,
-        capabilities = config.capabilities,
+        capabilities = capabilities,
         on_init = config.on_init,
     })
 end
 
 -- Set up nvim-cmp.
 local cmp = require("cmp")
+local luasnip = require("luasnip")
 
 cmp.setup({
     snippet = {
         expand = function(args)
-            require("luasnip").lsp_expand(args.body)
+            luasnip.lsp_expand(args.body)
         end,
     },
     window = {

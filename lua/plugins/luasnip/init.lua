@@ -2,16 +2,16 @@ return {
     {
         "L3MON4D3/LuaSnip",
         build = "make install_jsregexp",
-        config = function ()
-            local ls = require "luasnip"
+        config = function()
+            local ls = require("luasnip")
 
-            local types = require "luasnip.util.types"
+            local types = require("luasnip.util.types")
 
             ls.setup({
                 -- Remember the last snippet so you can jump back if you made a mistake
                 history = true,
                 -- To allow for dynamic snippets
-                update_events = { "TextChanged" , "TextChangedI"},
+                update_events = { "TextChanged", "TextChangedI" },
             })
 
             --
@@ -33,7 +33,7 @@ return {
             end, { silent = true })
 
             -- Cycle through choices
-            vim.keymap.set( "i" , "<c-l>", function()
+            vim.keymap.set("i", "<c-l>", function()
                 if ls.choice_active() then
                     ls.change_choice(-1)
                 end
@@ -42,14 +42,11 @@ return {
             -- Reload luasnip
             vim.keymap.set("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/lua/plugins/luasnip/init.lua<CR>")
 
-
-            for _, lang in pairs({"nix", "lua", "c", "jsonc", "tex"}) do
+            for _, lang in pairs({ "nix", "lua", "c", "jsonc", "tex" }) do
                 ls.add_snippets(lang, require("plugins.luasnip." .. lang))
             end
 
             ls.add_snippets("cpp", require("plugins.luasnip.c"))
-
-
-        end
+        end,
     },
 }

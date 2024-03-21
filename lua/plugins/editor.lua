@@ -134,4 +134,32 @@ return {
             size = 20,
         },
     },
+    {
+        dir = "/home/teto/prog/yabs.nvim",
+        config = function()
+            local yabs = require("yabs")
+
+            local tasks = require("plugins.tasks.tasks")
+
+            yabs:setup(tasks)
+
+            vim.keymap.set("n", "<leader>tl", ":Telescope yabs tasks<CR>")
+            vim.keymap.set("n", "<leader>tb", function()
+                yabs:run_task("build")
+            end)
+            vim.keymap.set("n", "<leader>tr", function()
+                yabs:run_task("run")
+            end)
+            vim.keymap.set("n", "<leader>tc", function()
+                yabs:run_task("clean")
+            end)
+            vim.keymap.set("n", "<leader>tt", function()
+                yabs:run_task("test")
+            end)
+        end,
+    },
+    {
+        -- dir = "/home/teto/prog/heptagon.nvim/",
+        "Seowlfh/heptagon.nvim",
+    },
 }

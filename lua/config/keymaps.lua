@@ -22,3 +22,10 @@ vim.keymap.set("n", "<leader>tv", ":ToggleTerm size=70 direction=vertical<CR>")
 -- Edit dotfiles
 vim.keymap.set("n", "<leader>ev", ":Telescope find_files cwd=$HOME/.config/nvim<CR>")
 vim.keymap.set("n", "<leader>eh", ":Telescope find_files cwd=$HOME/.config/home-manager<CR>")
+
+-- Resize
+vim.keymap.set("n", "<C-Up>", "<Cmd> resize +5<CR>")
+vim.keymap.set("n", "<C-Down>", "<Cmd> resize -5<CR>")
+vim.keymap.set("n", "<C-Left>", "<Cmd> vertical resize +5<CR>")
+vim.keymap.set("n", "<C-Right>", "<Cmd> vertical resize -5<CR>")
+vim.keymap.set("n", "<C-r>", "<C-W>=")

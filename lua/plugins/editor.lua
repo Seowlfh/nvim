@@ -68,6 +68,7 @@ return {
                 on_attach = my_on_attach, -- Epita coding style right there
                 view = {
                     width = 30,
+                    side = "right",
                 },
                 renderer = {
                     group_empty = true,
@@ -159,7 +160,7 @@ return {
         end,
     },
     {
-        -- dir = "/home/teto/prog/heptagon.nvim/",
-        "Seowlfh/heptagon.nvim",
+        dir = "/home/teto/prog/heptagon.nvim/",
+        -- "Seowlfh/heptagon.nvim",
     },
 }

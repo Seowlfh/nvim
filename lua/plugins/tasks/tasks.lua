@@ -91,6 +91,20 @@ return {
                 },
             },
         },
+        markdown = {
+            tasks = {
+                pandoc_build = {
+                    command = "pandoc -f markdown -o cours.pdf %.md --number-sections --toc",
+                    output = "terminal",
+                    tag = "build",
+                },
+                zathura_view = {
+                    command = "zathura cours.pdf",
+                    output = "terminal",
+                    tag = "view",
+                },
+            },
+        },
     },
     tasks = {
         make_build = {

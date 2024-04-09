@@ -96,17 +96,22 @@ return {
                 sources = cmp.config.sources({
                     { name = "nvim_lsp" },
                     { name = "luasnip" },
-                }, {}),
+                }, {
+                    { name = "buffer" },
+                }),
             })
 
             -- Set configuration for specific filetype.
             cmp.setup.filetype("gitcommit", {
                 sources = cmp.config.sources({
                     { name = "git" }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
-                }, {}),
+                }, {
+                    { name = "buffer" },
+                }),
             })
         end,
     },
     { "hrsh7th/cmp-nvim-lsp" },
     { "hrsh7th/cmp-path" },
+    { "hrsh7th/cmp-buffer" },
 }

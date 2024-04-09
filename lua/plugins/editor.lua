@@ -83,21 +83,34 @@ return {
         "ThePrimeagen/harpoon",
         branch = "harpoon2",
         dependencies = "nvim-lua/plenary.nvim",
-        keys = function()
-            local harpoon = require("harpoon")
-
-            return {
-                { "n", "<leader>a", harpoon:list():add(), desc = "[a]dd file" },
-                { "n", "<leader>al", harpoon.ui:toggle_quick_menu(harpoon:list()), desc = "h[a]rpoon [l]ist files" },
-                { "n", "<leader>h", harpoon:list():select(1), desc = "select file 1" },
-                { "n", "<leader>j", harpoon:list():select(2), desc = "select file 2" },
-                { "n", "<leader>k", harpoon:list():select(3), desc = "select file 3" },
-                { "n", "<leader>l", harpoon:list():select(4), desc = "select file 4" },
-            }
-        end,
         config = function()
             local harpoon = require("harpoon")
+
             harpoon:setup()
+
+            vim.keymap.set("n", "<leader>a", function()
+                harpoon:list():append()
+            end)
+            vim.keymap.set("n", "<leader>al", function()
+                harpoon.ui:toggle_quick_menu(harpoon:list())
+            end)
+
+            vim.keymap.set("n", "<leader>h", function()
+                harpoon:list():select(1)
+            end)
+            vim.keymap.set("n", "<leader>j", function()
+                harpoon:list():select(2)
+            end)
+            vim.keymap.set("n", "<leader>k", function()
+                harpoon:list():select(3)
+            end)
+            vim.keymap.set("n", "<leader>l", function()
+                harpoon:list():select(4)
+            end)
+            --
+            -- -- Toggle previous & next buffers stored within Harpoon list
+            -- vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
+            -- vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
         end,
     },
     {
@@ -144,22 +157,10 @@ return {
             vim.keymap.set("n", "<leader>tt", function()
                 yabs:run_task("test")
             end)
-            vim.keymap.set("n", "<leader>tv", function()
-                yabs:run_task("view")
-            end)
         end,
     },
     {
         dir = "/home/teto/prog/heptagon.nvim/",
         -- "Seowlfh/heptagon.nvim",
-    },
-    {
-        "folke/which-key.nvim",
-        event = "VeryLazy",
-        init = function()
-            vim.o.timeout = true
-            vim.o.timeoutlen = 300
-        end,
-        opts = {},
     },
 }

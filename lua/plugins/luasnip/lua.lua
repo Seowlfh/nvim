@@ -5,6 +5,8 @@ local i = ls.insert_node
 local fmt = require("luasnip.extras.fmt").fmt
 local rep = require("luasnip.extras").rep
 
+print("rompiche")
+
 return {
     s("req", fmt("local {} = require('{}')", { i(1), i(2) })),
 }

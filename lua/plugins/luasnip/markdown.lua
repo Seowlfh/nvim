@@ -20,6 +20,8 @@ return {
         \pagestyle{{fancy}}
         \fancyfoot[CE,CO]{{\thepage}}
     ...
+
+    \newpage
     
     {}
     ]],

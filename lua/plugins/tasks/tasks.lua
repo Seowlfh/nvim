@@ -20,16 +20,6 @@ return {
                     tag = "build",
                     condition = conditions.cmake,
                 },
-                -- gcc_build = {
-                --     command = "g++ *",
-                --     output = "quickfix",
-                --     tag = "build",
-                -- },
-                -- clang_build = {
-                --     command = "clang++ *",
-                --     output = "quickfix",
-                --     tag = "build",
-                -- },
             },
         },
         rust = {
@@ -99,7 +89,7 @@ return {
                     tag = "build",
                 },
                 zathura_view = {
-                    command = "zathura cours.pdf",
+                    command = "zathura cours.pdf&",
                     output = "terminal",
                     tag = "view",
                 },
@@ -118,6 +108,13 @@ return {
             output = "quickfix",
             tag = "clean",
             condition = conditions.make,
+        },
+    },
+    opts = {
+        output_types = {
+            quickfix = {
+                open_on_run = "always",
+            },
         },
     },
 }

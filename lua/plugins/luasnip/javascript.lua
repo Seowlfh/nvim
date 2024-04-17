@@ -23,7 +23,7 @@ return {
         function {}({}) {{
             {}
         }}
-        modules.export = {{
+        module.exports = {{
             {},
         }}]],
             { i(1, "funcName"), i(2, "params"), i(3), rep(1) }

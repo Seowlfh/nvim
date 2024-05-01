@@ -165,8 +165,8 @@ return {
         end,
     },
     {
-        dir = "/home/teto/prog/heptagon.nvim/",
-        -- "Seowlfh/heptagon.nvim",
+        -- dir = "/home/teto/prog/heptagon.nvim/",
+        "Seowlfh/heptagon.nvim",
     },
     {
         "folke/which-key.nvim",

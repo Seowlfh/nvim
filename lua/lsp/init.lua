@@ -47,6 +47,7 @@ local servers = {
     docker_compose_language_service = {},
     pyright = {},
     tsserver = {},
+    vhdl_ls = {},
 }
 
 local lspconfig = require("lspconfig")

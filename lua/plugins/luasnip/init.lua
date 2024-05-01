@@ -39,7 +39,7 @@ return {
                 end
             end)
 
-            for _, lang in pairs({ "nix", "lua", "c", "tex", "markdown", "javascript" }) do
+            for _, lang in pairs({ "nix", "lua", "c", "tex", "markdown", "javascript", "vhdl" }) do
                 ls.add_snippets(lang, require("plugins.luasnip." .. lang))
             end
 

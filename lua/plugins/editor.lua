@@ -78,6 +78,20 @@ return {
                 },
             })
         end,
+        enabled = false, -- Currently trying out oil
+    },
+    {
+        'stevearc/oil.nvim',
+        opts = {},
+        keys = function()
+            local oil = require("oil");
+
+            vim.keymap.set("n", "<leader>oo", function()
+                oil.open();
+            end);
+        end,
+        -- Optional dependencies
+        dependencies = { "nvim-tree/nvim-web-devicons" },
     },
     {
         "ThePrimeagen/harpoon",
@@ -136,6 +150,7 @@ return {
     },
     {
         dir = "/home/teto/prog/yabs.nvim",
+        deps = { "nvim-telescope/telescope.nvim", },
         keys = function()
             local yabs = require("yabs")
 

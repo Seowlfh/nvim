@@ -34,7 +34,7 @@ return {
 				dashboard.button(
 					"hs",
 					"  > Home-Manager settings",
-					":lcd $HOME/.config/home-manager | :e home.nix<CR>"
+					":lcd $home/prog/nixos-config/ | :e home.nix<CR>"
 				),
 				dashboard.button("q", "  > Quit NVIM", ":qa<CR>"),
 			}

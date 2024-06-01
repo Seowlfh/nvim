@@ -149,8 +149,10 @@ return {
         },
     },
     {
+        "Seowlfh/yabs.nvim",
+        dev = false,
         dir = "/home/teto/prog/yabs.nvim",
-        deps = { "nvim-telescope/telescope.nvim", },
+        branch = "dev",
         keys = function()
             local yabs = require("yabs")
 

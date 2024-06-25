@@ -39,3 +39,4 @@ vim.opt.list = true -- Enable listchars
 vim.opt.listchars = { tab = "➞ ", trail = "·" } -- Indicators for invisible characters
 
 vim.opt.clipboard = "unnamedplus"
+

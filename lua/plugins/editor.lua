@@ -3,9 +3,12 @@ return {
     {
         "NeogitOrg/neogit",
         dependencies = "nvim-lua/plenary.nvim",
-        config = function()
-            require("neogit").setup()
+        keys = function()
+            return {
+                { "<leader>no", ":Neogit<CR>", desc = "[N]eogit [O]pen"},
+            }
         end,
+        opts = {}
     },
     -- Treesitter
     {
@@ -199,4 +202,18 @@ return {
         end,
         opts = {},
     },
+    {
+        "stevearc/conform.nvim",
+        event = "BufWritePre",
+        opts = {
+            formaters_by_ft = {
+                lua = { "stylua" },
+                nix = { "nixpkgs-fmt" },
+            },
+
+            format_on_save = {
+                -- async = true,
+            },
+        },
+    }
 }

@@ -136,9 +136,12 @@ return {
     },
     {
         "lewis6991/gitsigns.nvim",
-        config = function()
-            require("gitsigns").setup()
-        end,
+        event = "BufEnter",
+        keys = {
+            { "<leader>sb", "<cmd>Gitsigns blame<CR>", desc = "Git[S]igns [B]lame" },
+            { "<leader>sl", "<cmd>Gitsigns blame_line<CR>", desc = "Git[S]igns Blame [L]ine" },
+        },
+        opts = {},
     },
     {
         "romainl/vim-qf",

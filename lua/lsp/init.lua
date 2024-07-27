@@ -11,7 +11,7 @@ local function on_attach(bufnr)
     setKeymap("n", "<leader>gt", vim.lsp.buf.type_definition, {})
     setKeymap("n", "<leader>ic", vim.lsp.buf.incoming_calls, {})
     setKeymap("n", "<leader>oc", vim.lsp.buf.outgoing_calls, {})
-    setKeymap("n", "<leader>df", vim.diagnostic.goto_next, {})
+    setKeymap("n", "<leader>dn", vim.diagnostic.goto_next, {})
     setKeymap("n", "<leader>dp", vim.diagnostic.goto_prev, {})
     setKeymap("n", "<leader>ds", vim.diagnostic.open_float, {})
     setKeymap("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>", {})
@@ -50,6 +50,7 @@ local servers = {
     pyright = {},
     tsserver = {},
     vhdl_ls = {},
+    gopls = {},
 }
 
 local lspconfig = require("lspconfig")

@@ -12,6 +12,20 @@ local conditions = {
 
 return {
     languages = {
+        go = {
+            tasks = {
+                go_run = {
+                    command = "go run .",
+                    output = "terminal",
+                    tag = "run",
+                },
+                go_build = {
+                    command = "go build .",
+                    output = "terminal",
+                    tag = "build",
+                }
+            }
+        },
         cpp = {
             tasks = {
                 cmake_build = {
@@ -97,16 +111,14 @@ return {
         },
     },
     tasks = {
-        make_build = {
+        make = {
             command = "make",
             output = "quickfix",
-            tag = "build",
             condition = conditions.make,
         },
         make_clean = {
-            command = "make",
+            command = "make clean",
             output = "quickfix",
-            tag = "clean",
             condition = conditions.make,
         },
     },

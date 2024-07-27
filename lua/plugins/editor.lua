@@ -212,10 +212,12 @@ return {
             formaters_by_ft = {
                 lua = { "stylua" },
                 nix = { "nixpkgs-fmt" },
+                go = { "gofmt" },
             },
 
             format_on_save = {
-                -- async = true,
+                timeout_ms = 500,
+                lsp_format = "fallback",
             },
         },
     }

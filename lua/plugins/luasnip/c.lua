@@ -7,7 +7,6 @@ local c = ls.choice_node
 local sn = ls.snippet_node
 local d = ls.dynamic_node
 
-
 local fmt = require("luasnip.extras.fmt").fmt
 local rep = require("luasnip.extras").rep
 
@@ -45,8 +44,8 @@ local jdocsnip = function(args, _, old_state)
                 inode = i(insert)
             end
             vim.list_extend(
-            nodes,
-            { t({ " * @param " .. arg .. " " }), inode, t({ "", "" }) }
+                nodes,
+                { t({ " * @param " .. arg .. " " }), inode, t({ "", "" }) }
             )
             param_nodes["arg" .. arg] = inode
 
@@ -63,8 +62,8 @@ local jdocsnip = function(args, _, old_state)
         end
 
         vim.list_extend(
-        nodes,
-        { t({ " * ", " * @return " }), inode, t({ "", "" }) }
+            nodes,
+            { t({ " * ", " * @return " }), inode, t({ "", "" }) }
         )
         param_nodes.ret = inode
         insert = insert + 1
@@ -79,8 +78,8 @@ local jdocsnip = function(args, _, old_state)
             ins = i(insert)
         end
         vim.list_extend(
-        nodes,
-        { t({ " * ", " * @throws " .. exc .. " " }), ins, t({ "", "" }) }
+            nodes,
+            { t({ " * ", " * @throws " .. exc .. " " }), ins, t({ "", "" }) }
         )
         param_nodes.ex = ins
         insert = insert + 1
@@ -96,31 +95,45 @@ end
 
 return {
     -- Javadoc snippet for Doxygen
-    s({trig="fn"}, {
-        d(5, jdocsnip, {1, 3, 4}), t({"", ""}),
+    s({ trig = "fn" }, {
+        d(5, jdocsnip, { 1, 3, 4 }), t({ "", "" }),
         c(1, {
-            t({"void"}),
-            i(nil, {""}),
-            t({"char"}),
-            t({"int"}),
-            t({"double"}),
+            t({ "void" }),
+            i(nil, { "" }),
+            t({ "char" }),
+            t({ "int" }),
+            t({ "double" }),
         }),
-        t({" "}),
-        i(2, {"myFunc"}),
-        t({"("}), i(3), t({")"}),
+        t({ " " }),
+        i(2, { "myFunc" }),
+        t({ "(" }), i(3), t({ ")" }),
         c(4, {
-            t({""}),
+            t({ "" }),
         }),
-        t({" {", "\t"}),
+        t({ " {", "\t" }),
         i(0),
-        t({"", "}"})
+        t({ "", "}" })
     }),
 
     s("jdoc", {
-        t({"/**", " * @brief "}),
+        t({ "/**", " * @brief " }),
         i(1, "Brief description"),
-        t({"", " *", " * "}),
+        t({ "", " *", " * " }),
         i(2, "More detailed description"),
-        t({"", " */", ""}),
-    })
+        t({ "", " */", "" }),
+    }),
+
+    s("header", fmt([[
+        #ifndef {}
+        #define {}
+
+        {}
+
+        #endif /* !{} */
+    ]], {
+        i(1),
+        rep(1),
+        i(2),
+        rep(1)
+    }))
 }

@@ -5,7 +5,7 @@ return {
         dependencies = "nvim-lua/plenary.nvim",
         keys = function()
             return {
-                { "<leader>no", ":Neogit<CR>", desc = "[N]eogit [O]pen"},
+                { "<leader>no", ":Neogit<CR>", desc = "[N]eogit [O]pen" },
             }
         end,
         opts = {}
@@ -138,7 +138,7 @@ return {
         "lewis6991/gitsigns.nvim",
         event = "BufEnter",
         keys = {
-            { "<leader>sb", "<cmd>Gitsigns blame<CR>", desc = "Git[S]igns [B]lame" },
+            { "<leader>sb", "<cmd>Gitsigns blame<CR>",      desc = "Git[S]igns [B]lame" },
             { "<leader>sl", "<cmd>Gitsigns blame_line<CR>", desc = "Git[S]igns Blame [L]ine" },
         },
         opts = {},
@@ -213,6 +213,9 @@ return {
                 lua = { "stylua" },
                 nix = { "nixpkgs-fmt" },
                 go = { "gofmt" },
+                c = { "clang-format" },
+                cpp = { "clang-format" },
+                sh = { "shellcheck" }
             },
 
             format_on_save = {

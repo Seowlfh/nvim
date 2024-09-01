@@ -17,6 +17,7 @@ local function on_attach(bufnr)
     setKeymap("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>", {})
     setKeymap("n", "<leader>gr", "<cmd>Telescope lsp_references<cr>", {})
     setKeymap("n", "<leader>r", vim.lsp.buf.rename, {})
+    setKeymap("n", "<leader>ca", vim.lsp.buf.code_action, {})
 end
 
 local servers = {

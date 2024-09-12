@@ -49,7 +49,7 @@ local servers = {
     dockerls = {},
     docker_compose_language_service = {},
     pyright = {},
-    tsserver = {},
+    ts_ls = {},
     vhdl_ls = {},
     gopls = {},
 }

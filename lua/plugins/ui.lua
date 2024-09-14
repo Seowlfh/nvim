@@ -47,9 +47,25 @@ return {
         lazy = false,
         priority = 1000,
         config = function()
+            local mirage = true
+            local colors = require('ayu.colors')
+            colors.generate(mirage)
+
             require("ayu").setup({
-                mirage = true,
+                mirage = mirage,
+                overrides = {
+                    LineNr = { fg = colors.ui }
+                },
             })
+
+            -- Change background according  to time
+            local hour = tonumber(vim.fn.strftime("%H"))
+            if hour >= 8 or hour <= 19 then
+                vim.opt.background = "light"
+            else
+                vim.opt.background = "dark"
+            end
+
             require("ayu").colorscheme()
         end,
     },

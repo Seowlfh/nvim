@@ -199,6 +199,7 @@ return {
     },
     {
         "stevearc/conform.nvim",
+        enable = false,
         event = "BufWritePre",
         opts = {
             formaters_by_ft = {

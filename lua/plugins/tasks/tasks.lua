@@ -115,11 +115,19 @@ return {
             command = "make",
             output = "quickfix",
             condition = conditions.make,
+            tag = "build",
+        },
+        make_check = {
+            command = "make check",
+            output = "quickfix",
+            condition = conditions.make,
+            tag = "test",
         },
         make_clean = {
             command = "make clean",
             output = "quickfix",
             condition = conditions.make,
+            tag = "clean",
         },
     },
     opts = {

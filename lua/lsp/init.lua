@@ -23,15 +23,7 @@ end
 local servers = {
     clangd = {},
     cmake = {},
-    rust_analyzer = {
-        settings = {
-            ["rust-analyzer"] = {
-                diagnostics = {
-                    enable = false,
-                },
-            },
-        },
-    },
+    rust_analyzer = {},
     nil_ls = {},
     lua_ls = {},
     texlab = {},

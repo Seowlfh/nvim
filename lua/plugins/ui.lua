@@ -61,7 +61,7 @@ return {
 
             -- Change background according  to time
             local hour = tonumber(vim.fn.strftime("%H"))
-            if hour >= 8 and hour < 18 then
+            if hour >= 8 and hour < 17 then
                 vim.opt.background = "light"
             else
                 vim.opt.background = "dark"

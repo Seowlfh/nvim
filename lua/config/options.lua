@@ -1,7 +1,8 @@
 -- Indentation
-vim.opt.tabstop = 8      -- Tab size
-vim.opt.shiftwidth = 4   -- Indent size
-vim.opt.expandtab = true -- Use spaces instead of tabs
+-- TODO: Change back when DRIL project is over
+-- vim.opt.tabstop = 8       -- Tab size
+-- vim.opt.shiftwidth = 4    -- Indent size
+-- vim.opt.expandtab = false -- Use spaces instead of tabs
 
 -- Search
 vim.opt.incsearch = true  -- Highlight matches while typing search query

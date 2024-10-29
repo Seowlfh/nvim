@@ -6,7 +6,7 @@ return {
         config = function()
             -- Setup orgmode
             require('orgmode').setup({
-                org_agenda_files = { '~/orgfiles/**/*', '~/school/**/*' },
+                org_agenda_files = { '~/school/*' },
                 org_default_notes_file = '~/orgfiles/refile.org',
                 org_todo_keywords = { 'TODO', 'NEXT', 'DOING', '|', 'DONE' },
             })

@@ -205,15 +205,15 @@ return {
 				lua = { "stylua" },
 				nix = { "nixpkgs-fmt" },
 				go = { "gofmt" },
-				-- c = { "clang-format" },
+				c = { "clang-format" },
 				cpp = { "clang-format" },
 				sh = { "shellcheck" }
 			},
 
-			-- format_on_save = {
-			--     timeout_ms = 500,
-			--     lsp_format = "fallback",
-			-- },
+			format_on_save = {
+			    timeout_ms = 500,
+			    lsp_format = "fallback",
+			},
 		},
 	},
 	{

@@ -8,7 +8,7 @@ return {
             require('orgmode').setup({
                 org_agenda_files = { '~/school/*' },
                 org_default_notes_file = '~/orgfiles/refile.org',
-                org_todo_keywords = { 'TODO', 'NEXT', 'DOING', '|', 'DONE' },
+                org_todo_keywords = { 'TODO', 'NEXT', 'DOING', 'STALLED', '|', 'DONE' },
             })
 
             -- NOTE: If you are using nvim-treesitter with ~ensure_installed = "all"~ option

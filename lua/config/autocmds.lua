@@ -18,6 +18,12 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = { "*" },
+    command = "sil !:%s/\\s\\+$//",
+    group = vim.api.nvim_create_augroup("remove_trailing_whitespace", {}),
+})
+
 -- Kitty autocommands to change padding/background when entering Neovim
 -- local kitty_mp = vim.api.nvim_create_augroup("kitty_mp", { clear = true })
 --

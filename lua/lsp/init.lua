@@ -27,22 +27,9 @@ local servers = {
     nil_ls = {},
     lua_ls = {},
     texlab = {},
-    ocamllsp = {
-        settings = {
-            codelens = { enable = true },
-            extendedHover = { enable = true },
-        },
-    },
-    hls = {
-        settings = {
-            filetypes = { "haskell", "lhaskell", "cabal" },
-        },
-    },
     dockerls = {},
     docker_compose_language_service = {},
     pyright = {},
-    ts_ls = {},
-    vhdl_ls = {},
     gopls = {},
 }
 

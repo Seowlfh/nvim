@@ -2,7 +2,10 @@ return {
     -- NeoGit <3 <3 <3
     {
         "NeogitOrg/neogit",
-        dependencies = "nvim-lua/plenary.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim",
+        },
         keys = function()
             return {
                 { "<leader>no", ":Neogit<CR>", desc = "[N]eogit [O]pen" },
@@ -13,16 +16,16 @@ return {
     -- Treesitter
     {
         "nvim-treesitter/nvim-treesitter",
+        branch = "main",
         build = ":TSUpdate",
         lazy = false,
         config = function()
-            local configs = require("nvim-treesitter.configs")
-
-            configs.setup({
+            require("nvim-treesitter").setup({
                 ensure_installed = { "c", "cpp", "nix", "rust", "lua", "vim", "vimdoc", "query" },
                 auto_install = true,
                 highlight = { enable = true },
                 indent = { enable = true },
+                ignore_install = { 'org' },
             })
         end,
     },
@@ -222,7 +225,7 @@ return {
             "MunifTanjim/nui.nvim",
             "nvim-lua/plenary.nvim",
             "sindrets/diffview.nvim",
-            "stevearc/dressing.nvim", -- Recommended but not required. Better UI for pickers.
+            "stevearc/dressing.nvim",     -- Recommended but not required. Better UI for pickers.
             "nvim-tree/nvim-web-devicons" -- Recommended but not required. Icons in discussion tree.
         },
         enabled = true,

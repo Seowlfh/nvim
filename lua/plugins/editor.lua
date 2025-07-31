@@ -37,48 +37,6 @@ return {
         end,
     },
     {
-        "nvim-tree/nvim-tree.lua",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
-        config = function()
-            -- disable netrw at the very start of your init.lua
-            vim.g.loaded_netrw = 1
-            vim.g.loaded_netrwPlugin = 1
-
-            -- set termguicolors to enable highlight groups
-            vim.opt.termguicolors = true
-
-            local function my_on_attach(bufnr)
-                local api = require("nvim-tree.api")
-
-                local function opts(desc)
-                    return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-                end
-
-                -- default mappings
-                api.config.mappings.default_on_attach(bufnr)
-
-                -- remove mappings
-                -- vim.keymap.del('n', '<C-t>', {buffer = bufnr})
-            end
-
-            require("nvim-tree").setup({
-                sort_by = "case_sensitive",
-                on_attach = my_on_attach, -- Epita coding style right there
-                view = {
-                    width = 30,
-                    side = "right",
-                },
-                renderer = {
-                    group_empty = true,
-                },
-                filters = {
-                    git_ignored = false,
-                },
-            })
-        end,
-        enabled = false, -- Currently trying out oil
-    },
-    {
         'stevearc/oil.nvim',
         opts = {
             skip_confirm_for_simple_edits = true,
@@ -95,39 +53,6 @@ return {
         end,
         -- Optional dependencies
         dependencies = { "nvim-tree/nvim-web-devicons" },
-    },
-    {
-        "ThePrimeagen/harpoon",
-        branch = "harpoon2",
-        dependencies = "nvim-lua/plenary.nvim",
-        keys = function()
-            local harpoon = require("harpoon")
-
-            vim.keymap.set("n", "<leader>a", function()
-                harpoon:list():add()
-            end)
-            vim.keymap.set("n", "<leader>al", function()
-                harpoon.ui:toggle_quick_menu(harpoon:list())
-            end)
-
-            vim.keymap.set("n", "<leader>h", function()
-                harpoon:list():select(1)
-            end)
-            vim.keymap.set("n", "<leader>j", function()
-                harpoon:list():select(2)
-            end)
-            vim.keymap.set("n", "<leader>k", function()
-                harpoon:list():select(3)
-            end)
-            vim.keymap.set("n", "<leader>l", function()
-                harpoon:list():select(4)
-            end)
-        end,
-        config = function()
-            local harpoon = require("harpoon")
-
-            harpoon:setup()
-        end,
     },
     {
         "lewis6991/gitsigns.nvim",
@@ -188,10 +113,6 @@ return {
         end,
     },
     {
-        -- dir = "/home/teto/prog/heptagon.nvim/",
-        "Seowlfh/heptagon.nvim",
-    },
-    {
         "folke/which-key.nvim",
         event = "VeryLazy",
         init = function()
@@ -218,20 +139,5 @@ return {
                 lsp_format = "fallback",
             },
         },
-    },
-    {
-        "harrisoncramer/gitlab.nvim",
-        dependencies = {
-            "MunifTanjim/nui.nvim",
-            "nvim-lua/plenary.nvim",
-            "sindrets/diffview.nvim",
-            "stevearc/dressing.nvim",     -- Recommended but not required. Better UI for pickers.
-            "nvim-tree/nvim-web-devicons" -- Recommended but not required. Icons in discussion tree.
-        },
-        enabled = true,
-        build = function() require("gitlab.server").build(true) end, -- Builds the Go binary
-        config = function()
-            require("gitlab").setup()
-        end,
     },
 }

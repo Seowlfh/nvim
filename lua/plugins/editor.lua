@@ -11,7 +11,7 @@ return {
                 { "<leader>no", ":Neogit<CR>", desc = "[N]eogit [O]pen" },
             }
         end,
-        opts = {}
+        opts = {},
     },
     -- Treesitter
     {
@@ -25,7 +25,7 @@ return {
                 auto_install = true,
                 highlight = { enable = true },
                 indent = { enable = true },
-                ignore_install = { 'org' },
+                ignore_install = { "org" },
             })
         end,
     },
@@ -33,11 +33,11 @@ return {
         "lervag/vimtex",
         lazy = false,
         init = function()
-            vim.g.vimtex_view_method = 'zathura'
+            vim.g.vimtex_view_method = "zathura"
         end,
     },
     {
-        'stevearc/oil.nvim',
+        "stevearc/oil.nvim",
         opts = {
             skip_confirm_for_simple_edits = true,
             view_options = {
@@ -45,11 +45,11 @@ return {
             },
         },
         keys = function()
-            local oil = require("oil");
+            local oil = require("oil")
 
             vim.keymap.set("n", "<leader>oo", function()
-                oil.open();
-            end);
+                oil.open()
+            end)
         end,
         -- Optional dependencies
         dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -58,7 +58,7 @@ return {
         "lewis6991/gitsigns.nvim",
         event = "BufEnter",
         keys = {
-            { "<leader>sb", "<cmd>Gitsigns blame<CR>",      desc = "Git[S]igns [B]lame" },
+            { "<leader>sb", "<cmd>Gitsigns blame<CR>", desc = "Git[S]igns [B]lame" },
             { "<leader>sl", "<cmd>Gitsigns blame_line<CR>", desc = "Git[S]igns Blame [L]ine" },
         },
         opts = {},
@@ -134,7 +134,7 @@ return {
                 go = { "gofmt" },
                 c = { "clang-format" },
                 cpp = { "clang-format" },
-                sh = { "shellcheck" }
+                sh = { "shellcheck" },
             },
 
             format_on_save = {

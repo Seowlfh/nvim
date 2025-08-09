@@ -125,7 +125,7 @@ return {
         "stevearc/conform.nvim",
         event = "BufWritePre",
         opts = {
-            formaters_by_ft = {
+            formatters_by_ft = {
                 lua = { "stylua" },
                 nix = { "nixpkgs-fmt" },
                 go = { "gofmt" },
@@ -135,8 +135,7 @@ return {
             },
 
             format_on_save = {
-                timeout_ms = 500,
-                lsp_format = "fallback",
+                timeout = 500,
             },
         },
     },

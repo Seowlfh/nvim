@@ -103,6 +103,9 @@ return {
             vim.keymap.set("n", "<leader>tv", function()
                 yabs:run_task("view")
             end)
+            vim.keymap.set("n", "<leader>to", function()
+                yabs:run_task("configure")
+            end)
         end,
         config = function()
             local yabs = require("yabs")

@@ -4,6 +4,7 @@ local conditions = {
     cmake = utils.file_exists("CMakeLists.txt"),
     make = utils.file_exists("Makefile"),
     cargo = utils.file_exists("Cargo.toml"),
+    flake = utils.file_exists("flake.nix"),
 }
 
 return {
@@ -19,8 +20,8 @@ return {
                     command = "go build .",
                     output = "terminal",
                     tag = "build",
-                }
-            }
+                },
+            },
         },
         rust = {
             tasks = {
@@ -81,6 +82,18 @@ return {
             output = "quickfix",
             tag = "build",
             condition = conditions.cmake,
+        },
+        nix_build = {
+            command = "nix build",
+            output = "quickfix",
+            tag = "build",
+            condition = conditions.flake,
+        },
+        nix_run = {
+            command = "nix run",
+            output = "quickfix",
+            tag = "run",
+            condition = conditions.flake,
         },
     },
     opts = {

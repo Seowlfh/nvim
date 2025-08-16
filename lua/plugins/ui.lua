@@ -49,13 +49,13 @@ return {
         priority = 1000,
         config = function()
             local mirage = false
-            local colors = require('ayu.colors')
+            local colors = require("ayu.colors")
             colors.generate(mirage)
 
             require("ayu").setup({
                 mirage = mirage,
                 overrides = {
-                    LineNr = { fg = colors.ui }
+                    LineNr = { fg = colors.ui },
                 },
             })
 

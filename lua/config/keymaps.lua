@@ -31,10 +31,5 @@ vim.keymap.set("n", "<C-Right>", "<Cmd> vertical resize -5<CR>")
 vim.keymap.set("n", "<C-r>", "<C-W>=")
 
 -- Selection
-vim.keymap.set(
-    "n",
-    "gs",
-    ":%s/\\<<C-r><C-w>\\>//g<Left><Left>",
-    { desc = "replace word under cursor" }
-)
+vim.keymap.set("n", "gs", ":%s/\\<<C-r><C-w>\\>//g<Left><Left>", { desc = "replace word under cursor" })
 vim.keymap.set("x", "gs", 'y:%s/\\V<C-r>"//g<Left><Left>', { desc = "replace selection" })

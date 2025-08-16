@@ -1,4 +1,4 @@
-local ls = require('luasnip')
+local ls = require("luasnip")
 
 local s = ls.s
 local i = ls.insert_node
@@ -43,10 +43,7 @@ local jdocsnip = function(args, _, old_state)
             else
                 inode = i(insert)
             end
-            vim.list_extend(
-                nodes,
-                { t({ " * @param " .. arg .. " " }), inode, t({ "", "" }) }
-            )
+            vim.list_extend(nodes, { t({ " * @param " .. arg .. " " }), inode, t({ "", "" }) })
             param_nodes["arg" .. arg] = inode
 
             insert = insert + 1
@@ -61,10 +58,7 @@ local jdocsnip = function(args, _, old_state)
             inode = i(insert)
         end
 
-        vim.list_extend(
-            nodes,
-            { t({ " * ", " * @return " }), inode, t({ "", "" }) }
-        )
+        vim.list_extend(nodes, { t({ " * ", " * @return " }), inode, t({ "", "" }) })
         param_nodes.ret = inode
         insert = insert + 1
     end
@@ -77,10 +71,7 @@ local jdocsnip = function(args, _, old_state)
         else
             ins = i(insert)
         end
-        vim.list_extend(
-            nodes,
-            { t({ " * ", " * @throws " .. exc .. " " }), ins, t({ "", "" }) }
-        )
+        vim.list_extend(nodes, { t({ " * ", " * @throws " .. exc .. " " }), ins, t({ "", "" }) })
         param_nodes.ex = ins
         insert = insert + 1
     end
@@ -96,7 +87,8 @@ end
 return {
     -- Javadoc snippet for Doxygen
     s({ trig = "fn" }, {
-        d(5, jdocsnip, { 1, 3, 4 }), t({ "", "" }),
+        d(5, jdocsnip, { 1, 3, 4 }),
+        t({ "", "" }),
         c(1, {
             t({ "void" }),
             i(nil, { "" }),
@@ -106,13 +98,15 @@ return {
         }),
         t({ " " }),
         i(2, { "myFunc" }),
-        t({ "(" }), i(3), t({ ")" }),
+        t({ "(" }),
+        i(3),
+        t({ ")" }),
         c(4, {
             t({ "" }),
         }),
         t({ " {", "\t" }),
         i(0),
-        t({ "", "}" })
+        t({ "", "}" }),
     }),
 
     s("jdoc", {
@@ -123,17 +117,23 @@ return {
         t({ "", " */", "" }),
     }),
 
-    s("header", fmt([[
+    s(
+        "header",
+        fmt(
+            [[
         #ifndef {}
         #define {}
 
         {}
 
         #endif /* !{} */
-    ]], {
-        i(1),
-        rep(1),
-        i(2),
-        rep(1)
-    }))
+    ]],
+            {
+                i(1),
+                rep(1),
+                i(2),
+                rep(1),
+            }
+        )
+    ),
 }

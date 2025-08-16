@@ -17,7 +17,7 @@ return {
                     );
                 end entity;
             ]],
-            { i(1, "entityName"), i(2)}
+            { i(1, "entityName"), i(2) }
         )
     ),
     s(
@@ -30,7 +30,7 @@ return {
                     {}
                 end process;
             ]],
-            { i(1, "params"), i(2), i(3)}
+            { i(1, "params"), i(2), i(3) }
         )
     ),
     s(
@@ -43,7 +43,7 @@ return {
                     {}
                 end architecture;
             ]],
-            { i(1), i(2), i(3), i(4)}
+            { i(1), i(2), i(3), i(4) }
         )
     ),
 }

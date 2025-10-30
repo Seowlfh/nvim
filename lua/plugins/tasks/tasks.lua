@@ -83,18 +83,18 @@ return {
             tag = "build",
             condition = conditions.cmake,
         },
-        nix_build = {
-            command = "nix build",
-            output = "quickfix",
-            tag = "build",
-            condition = conditions.flake,
-        },
-        nix_run = {
-            command = "nix run",
-            output = "quickfix",
-            tag = "run",
-            condition = conditions.flake,
-        },
+        -- nix_build = {
+        --     command = "nix build",
+        --     output = "quickfix",
+        --     tag = "build",
+        --     condition = conditions.flake,
+        -- },
+        -- nix_run = {
+        --     command = "nix run",
+        --     output = "quickfix",
+        --     tag = "run",
+        --     condition = conditions.flake,
+        -- },
     },
     opts = {
         output_types = {

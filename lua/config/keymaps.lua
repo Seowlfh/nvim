@@ -14,11 +14,6 @@ vim.keymap.set("n", "<S-l>", "<Cmd>tabnext<CR>")
 -- NvimTree
 vim.keymap.set("n", "<leader>ot", ":NvimTreeToggle <CR>", { silent = true, noremap = true })
 
--- Toggleterm
-vim.keymap.set("t", "<ESC>", [[<C-\><C-n>]])
-vim.keymap.set("n", "<leader>th", ":ToggleTerm size=15 direction=horizontal<CR>")
-vim.keymap.set("n", "<leader>tv", ":ToggleTerm size=50 direction=vertical<CR>")
-
 -- Edit dotfiles
 vim.keymap.set("n", "<leader>ev", ":Telescope find_files cwd=$HOME/.config/nvim<CR>")
 vim.keymap.set("n", "<leader>eh", ":Telescope find_files cwd=$HOME/.config/home-manager<CR>")
@@ -33,3 +28,6 @@ vim.keymap.set("n", "<C-r>", "<C-W>=")
 -- Selection
 vim.keymap.set("n", "gs", ":%s/\\<<C-r><C-w>\\>//g<Left><Left>", { desc = "replace word under cursor" })
 vim.keymap.set("x", "gs", 'y:%s/\\V<C-r>"//g<Left><Left>', { desc = "replace selection" })
+
+-- Terminal
+vim.keymap.set("t", "<ESC>", [[<C-\><C-n>]])

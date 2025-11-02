@@ -70,7 +70,6 @@ return {
             vim.api.nvim_set_keymap("n", "<leader>qt", "<Plug>(qf_qf_toggle)", {})
         end,
     },
-    { "akinsho/toggleterm.nvim" },
     {
         "Seowlfh/yabs.nvim",
         dev = false,

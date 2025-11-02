@@ -23,13 +23,6 @@ return {
                 ".git/",
                 "node_modules",
             },
-            mappings = {
-                i = {
-                    -- Open the file on the current buffer (instead of hsplit
-                    -- for, for instance, help pages).
-                    ["<CR>"] = require("telescope.actions").file_edit,
-                },
-            },
         },
     },
 }

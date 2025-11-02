@@ -16,8 +16,8 @@ vim.keymap.set("n", "<leader>ot", ":NvimTreeToggle <CR>", { silent = true, norem
 
 -- Toggleterm
 vim.keymap.set("t", "<ESC>", [[<C-\><C-n>]])
-vim.keymap.set("n", "<leader>th", ":ToggleTerm direction=horizontal<CR>")
-vim.keymap.set("n", "<leader>tv", ":ToggleTerm size=70 direction=vertical<CR>")
+vim.keymap.set("n", "<leader>th", ":ToggleTerm size=15 direction=horizontal<CR>")
+vim.keymap.set("n", "<leader>tv", ":ToggleTerm size=50 direction=vertical<CR>")
 
 -- Edit dotfiles
 vim.keymap.set("n", "<leader>ev", ":Telescope find_files cwd=$HOME/.config/nvim<CR>")

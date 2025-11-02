@@ -66,8 +66,6 @@ return {
     {
         "romainl/vim-qf",
         config = function()
-            vim.api.nvim_set_keymap("n", "[q", "<Plug>(qf_qf_previous)", {})
-            vim.api.nvim_set_keymap("n", "]q", "<Plug>(qf_qf_next)", {})
             vim.api.nvim_set_keymap("n", "<leader>qj", "<Plug>(qf_qf_switch)", {})
             vim.api.nvim_set_keymap("n", "<leader>qt", "<Plug>(qf_qf_toggle)", {})
         end,

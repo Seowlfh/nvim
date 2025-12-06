@@ -56,8 +56,8 @@ return {
     },
     {
         "Seowlfh/yabs.nvim",
-        dev = false,
-        dir = "/home/teto/prog/yabs.nvim",
+        -- dev = false,
+        -- dir = "/home/teto/prog/yabs.nvim",
         branch = "dev",
         keys = function()
             local yabs = require("yabs")
@@ -98,23 +98,5 @@ return {
             vim.o.timeoutlen = 300
         end,
         opts = {},
-    },
-    {
-        "stevearc/conform.nvim",
-        event = "BufWritePre",
-        opts = {
-            formatters_by_ft = {
-                lua = { "stylua" },
-                nix = { "nixpkgs-fmt" },
-                go = { "gofmt" },
-                c = { "clang-format" },
-                cpp = { "clang-format" },
-                sh = { "shellcheck" },
-            },
-
-            format_on_save = {
-                timeout = 500,
-            },
-        },
     },
 }

@@ -3,22 +3,25 @@ return {
     branch = "main",
     build = ":TSUpdate",
     lazy = false,
-    config = function()
-        require("nvim-treesitter").setup({
-            ensure_installed = {
-                "c",
-                "cpp",
-                "nix",
-                "rust",
-                "lua",
-                "query",
-                "vim",
-                "vimdoc",
-            },
-            auto_install = true,
-            highlight = { enable = true },
-            indent = { enable = true },
-            ignore_install = { "org" },
+    opts = {
+        install_dir = vim.fn.stdpath("data") .. "/site",
+    },
+    config = function(opts)
+        local ts = require("nvim-treesitter")
+
+        ts.setup(opts)
+        ts.install({
+            "go",
+            "nix",
+            "lua",
+            "c",
+        })
+
+        vim.api.nvim_create_autocmd("FileType", {
+            pattern = { "go", "nix", "lua", "c" },
+            callback = function()
+                vim.treesitter.start()
+            end,
         })
     end,
 }

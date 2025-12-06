@@ -11,9 +11,6 @@ vim.keymap.set("n", "<C-l>", "<C-w>l")
 vim.keymap.set("n", "<S-h>", "<Cmd>tabprevious<CR>")
 vim.keymap.set("n", "<S-l>", "<Cmd>tabnext<CR>")
 
--- NvimTree
-vim.keymap.set("n", "<leader>ot", ":NvimTreeToggle <CR>", { silent = true, noremap = true })
-
 -- Edit dotfiles
 vim.keymap.set("n", "<leader>ev", ":Telescope find_files cwd=$HOME/.config/nvim<CR>")
 vim.keymap.set("n", "<leader>eh", ":Telescope find_files cwd=$HOME/.config/home-manager<CR>")

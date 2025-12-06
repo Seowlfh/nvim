@@ -9,7 +9,6 @@ function M.setup_signs()
     }
 
     vim.diagnostic.config({
-        virtual_lines = true,
         severity_sort = true,
         float = {
             severity_sort = true,

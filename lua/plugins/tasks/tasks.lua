@@ -21,6 +21,11 @@ return {
                     output = "terminal",
                     tag = "build",
                 },
+                go_test = {
+                    command = "go test .",
+                    output = "terminal",
+                    tag = "build",
+                },
             },
         },
         rust = {

@@ -15,10 +15,11 @@ return {
             "nix",
             "lua",
             "c",
+            "javascript",
         })
 
         vim.api.nvim_create_autocmd("FileType", {
-            pattern = { "go", "nix", "lua", "c" },
+            pattern = { "go", "nix", "lua", "c", "js" },
             callback = function()
                 vim.treesitter.start()
             end,

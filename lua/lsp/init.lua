@@ -37,6 +37,7 @@ local servers = {
     "docker_compose_language_service",
     "pyright",
     "gopls",
+    "ts_ls",
 }
 
 for _, server in ipairs(servers) do

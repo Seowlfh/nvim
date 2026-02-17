@@ -1,16 +1,13 @@
 return {
-    -- NeoGit <3 <3 <3
     {
         "NeogitOrg/neogit",
         dependencies = {
             "nvim-lua/plenary.nvim",
             "nvim-telescope/telescope.nvim",
         },
-        keys = function()
-            return {
-                { "<leader>no", ":Neogit<CR>", desc = "[N]eogit [O]pen" },
-            }
-        end,
+        keys = {
+            { "<leader>no", ":Neogit<CR>", desc = "[N]eogit [O]pen" },
+        },
         opts = {},
     },
     {
@@ -35,7 +32,6 @@ return {
                 oil.open()
             end)
         end,
-        -- Optional dependencies
         dependencies = { "nvim-tree/nvim-web-devicons" },
     },
     {
@@ -53,50 +49,5 @@ return {
             vim.api.nvim_set_keymap("n", "<leader>qj", "<Plug>(qf_qf_switch)", {})
             vim.api.nvim_set_keymap("n", "<leader>qt", "<Plug>(qf_qf_toggle)", {})
         end,
-    },
-    {
-        "Seowlfh/yabs.nvim",
-        -- dev = false,
-        -- dir = "/home/teto/prog/yabs.nvim",
-        branch = "dev",
-        keys = function()
-            local yabs = require("yabs")
-
-            vim.keymap.set("n", "<leader>tl", ":Telescope yabs tasks<CR>")
-            vim.keymap.set("n", "<leader>tb", function()
-                yabs:run_task("build")
-            end)
-            vim.keymap.set("n", "<leader>tr", function()
-                yabs:run_task("run")
-            end)
-            vim.keymap.set("n", "<leader>tc", function()
-                yabs:run_task("clean")
-            end)
-            vim.keymap.set("n", "<leader>tt", function()
-                yabs:run_task("test")
-            end)
-            vim.keymap.set("n", "<leader>tv", function()
-                yabs:run_task("view")
-            end)
-            vim.keymap.set("n", "<leader>to", function()
-                yabs:run_task("configure")
-            end)
-        end,
-        config = function()
-            local yabs = require("yabs")
-
-            local tasks = require("plugins.tasks.tasks")
-
-            yabs:setup(tasks)
-        end,
-    },
-    {
-        "folke/which-key.nvim",
-        event = "VeryLazy",
-        init = function()
-            vim.o.timeout = true
-            vim.o.timeoutlen = 300
-        end,
-        opts = {},
     },
 }

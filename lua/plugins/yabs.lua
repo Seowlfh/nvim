@@ -7,7 +7,7 @@ local conditions = {
     flake = utils.file_exists("flake.nix"),
 }
 
-return {
+local tasks = {
     languages = {
         go = {
             tasks = {
@@ -108,4 +108,38 @@ return {
             },
         },
     },
+}
+
+return {
+    "Seowlfh/yabs.nvim",
+    dev = false,
+    dir = "/home/teto/prog/yabs.nvim",
+    branch = "main",
+    keys = function()
+        local yabs = require("yabs")
+
+        vim.keymap.set("n", "<leader>tl", ":Telescope yabs tasks<CR>")
+        vim.keymap.set("n", "<leader>tb", function()
+            yabs:run_task("build")
+        end)
+        vim.keymap.set("n", "<leader>tr", function()
+            yabs:run_task("run")
+        end)
+        vim.keymap.set("n", "<leader>tc", function()
+            yabs:run_task("clean")
+        end)
+        vim.keymap.set("n", "<leader>tt", function()
+            yabs:run_task("test")
+        end)
+        vim.keymap.set("n", "<leader>tv", function()
+            yabs:run_task("view")
+        end)
+        vim.keymap.set("n", "<leader>to", function()
+            yabs:run_task("configure")
+        end)
+    end,
+    config = function()
+        local yabs = require("yabs")
+        yabs:setup(tasks)
+    end,
 }

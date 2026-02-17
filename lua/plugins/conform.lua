@@ -9,6 +9,7 @@ return {
             c = { "clang-format" },
             cpp = { "clang-format" },
             sh = { "shellcheck" },
+            rust = { "rustfmt" },
         },
 
         format_on_save = {

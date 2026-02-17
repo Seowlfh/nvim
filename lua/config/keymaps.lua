@@ -11,10 +11,6 @@ vim.keymap.set("n", "<C-l>", "<C-w>l")
 vim.keymap.set("n", "<S-h>", "<Cmd>tabprevious<CR>")
 vim.keymap.set("n", "<S-l>", "<Cmd>tabnext<CR>")
 
--- Edit dotfiles
-vim.keymap.set("n", "<leader>ev", ":Telescope find_files cwd=$HOME/.config/nvim<CR>")
-vim.keymap.set("n", "<leader>eh", ":Telescope find_files cwd=$HOME/.config/home-manager<CR>")
-
 -- Resize
 vim.keymap.set("n", "<C-Up>", "<Cmd> resize +5<CR>")
 vim.keymap.set("n", "<C-Down>", "<Cmd> resize -5<CR>")

@@ -2,9 +2,8 @@ return {
     -- Editing
     {
         "kylechui/nvim-surround",
-        config = function()
-            require("nvim-surround").setup()
-        end,
+        event = "VeryLazy",
+        opts = {},
     },
     {
         "jinh0/eyeliner.nvim",
@@ -17,15 +16,11 @@ return {
     },
     {
         "windwp/nvim-autopairs",
-        config = function()
-            require("nvim-autopairs").setup()
-        end,
+        opts = {},
     },
     {
         "numToStr/Comment.nvim",
-        config = function()
-            require("Comment").setup()
-        end,
+        opts = {},
     },
     -- Autocomplete
     {
@@ -36,20 +31,10 @@ return {
     },
     {
         "hrsh7th/nvim-cmp",
-        dependencies = {
-            "L3MON4D3/LuaSnip",
-            "saadparwaiz1/cmp_luasnip",
-        },
         config = function()
             local cmp = require("cmp")
-            local luasnip = require("luasnip")
 
             cmp.setup({
-                snippet = {
-                    expand = function(args)
-                        luasnip.lsp_expand(args.body)
-                    end,
-                },
                 window = {
                     -- completion = cmp.config.window.bordered(),
                     -- documentation = cmp.config.window.bordered(),
@@ -63,7 +48,6 @@ return {
                 }),
                 sources = cmp.config.sources({
                     { name = "nvim_lsp" },
-                    { name = "luasnip" },
                 }, {}),
             })
 

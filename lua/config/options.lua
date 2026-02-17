@@ -34,7 +34,6 @@ vim.opt.backup = false
 vim.opt.swapfile = false
 
 -- Miscellaneaous
-vim.opt.mouse = a -- Enable mouse support
 vim.opt.list = true -- Enable listchars
 vim.opt.listchars = { tab = "➞ ", trail = "·" } -- Indicators for invisible characters
 

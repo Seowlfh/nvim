@@ -21,7 +21,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         setKeymap("n", "<leader>ds", vim.diagnostic.open_float, {})
         setKeymap("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>", {})
         setKeymap("n", "<leader>gr", "<cmd>Telescope lsp_references<cr>", {})
-        setKeymap("n", "<leader>r", vim.lsp.buf.rename, {})
+        setKeymap("n", "<leader>rw", vim.lsp.buf.rename, {})
         setKeymap("n", "<leader>ca", vim.lsp.buf.code_action, {})
     end,
 })
@@ -38,6 +38,7 @@ local servers = {
     "pyright",
     "gopls",
     "ts_ls",
+    "bashls",
 }
 
 for _, server in ipairs(servers) do

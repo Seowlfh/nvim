@@ -27,6 +27,9 @@ return {
                 preview_width = 0.5,
             },
             sorting_strategy = "ascending",
+            file_ignore_patterns = {
+                "^.git/",
+            },
         },
     },
 }

@@ -21,8 +21,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
         setKeymap("n", "<leader>ds", vim.diagnostic.open_float, {})
         setKeymap("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>", {})
         setKeymap("n", "<leader>gr", "<cmd>Telescope lsp_references<cr>", {})
-        setKeymap("n", "<leader>rw", vim.lsp.buf.rename, {})
-        setKeymap("n", "<leader>ca", vim.lsp.buf.code_action, {})
+        setKeymap("n", "<leader>lr", vim.lsp.buf.rename, {})
+        setKeymap("n", "<leader>la", vim.lsp.buf.code_action, {})
     end,
 })
 

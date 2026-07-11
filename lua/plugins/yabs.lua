@@ -38,13 +38,12 @@ local tasks = {
                 },
                 cargo_run = {
                     command = "cargo run",
-                    output = "terminal",
+                    output = "quickfix",
                     tag = "run",
                     condition = conditions.cargo,
                 },
                 cargo_clean = {
                     command = "cargo clean",
-                    output = "quickfix",
                     tag = "clean",
                     condition = conditions.cargo,
                 },

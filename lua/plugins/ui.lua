@@ -1,6 +1,7 @@
 return {
     -- UI
     {
+        enabled = false,
         "goolord/alpha-nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
@@ -56,6 +57,41 @@ return {
                 mirage = mirage,
                 overrides = {
                     LineNr = { fg = colors.ui },
+                    TelescopeBorder = {
+                        bg = colors.bg,
+                        fg = colors.bg,
+                    },
+                    TelescopeNormal = {
+                        bg = colors.bg,
+                        fg = colors.fg,
+                    },
+                    TelescopeBorder = {
+                        bg = colors.bg,
+                        fg = colors.bg,
+                    },
+                    TelescopePromptNormal = {
+                        bg = colors.bg,
+                    },
+                    TelescopePromptBorder = {
+                        bg = colors.bg,
+                        fg = colors.bg,
+                    },
+                    TelescopePromptTitle = {
+                        bg = colors.bg_highlight,
+                        fg = colors.fg,
+                    },
+                    TelescopePreviewTitle = {
+                        bg = colors.bg,
+                        fg = colors.bg,
+                    },
+                    TelescopeResultsTitle = {
+                        bg = colors.bg,
+                        fg = colors.bg,
+                    },
+                    NoiceCmdlinePopupBorder = {
+                        bg = colors.bg,
+                        fg = colors.bg,
+                    },
                 },
             })
 

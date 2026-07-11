@@ -31,6 +31,16 @@ return {
     },
     {
         "hrsh7th/nvim-cmp",
+        dependencies = {
+            { "hrsh7th/cmp-nvim-lsp" },
+            { "hrsh7th/cmp-path" },
+            { "neovim/nvim-lspconfig" },
+            { "hrsh7th/cmp-nvim-lsp" },
+            { "hrsh7th/cmp-buffer" },
+            { "hrsh7th/cmp-path" },
+            { "hrsh7th/cmp-cmdline" },
+            { "hrsh7th/nvim-cmp" },
+        },
         config = function()
             local cmp = require("cmp")
 
@@ -50,15 +60,6 @@ return {
                     { name = "nvim_lsp" },
                 }, {}),
             })
-
-            -- Set configuration for specific filetype.
-            cmp.setup.filetype("gitcommit", {
-                sources = cmp.config.sources({
-                    { name = "git" }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
-                }, {}),
-            })
         end,
     },
-    { "hrsh7th/cmp-nvim-lsp" },
-    { "hrsh7th/cmp-path" },
 }

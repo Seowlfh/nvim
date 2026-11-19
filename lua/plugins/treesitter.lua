@@ -9,17 +9,23 @@ return {
     config = function(opts)
         local ts = require("nvim-treesitter")
 
-        ts.setup(opts)
-        ts.install({
+        local lang = {
+            "rust",
+            "markdown",
             "go",
             "nix",
             "lua",
             "c",
-            "javascript",
-        })
+            "python",
+            "bash",
+            "ruby",
+        }
+
+        ts.setup(opts)
+        ts.install(lang)
 
         vim.api.nvim_create_autocmd("FileType", {
-            pattern = { "go", "nix", "lua", "c", "js" },
+            pattern = lang,
             callback = function()
                 vim.treesitter.start()
             end,

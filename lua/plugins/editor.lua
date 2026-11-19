@@ -18,23 +18,6 @@ return {
         end,
     },
     {
-        "stevearc/oil.nvim",
-        opts = {
-            skip_confirm_for_simple_edits = true,
-            view_options = {
-                show_hidden = true,
-            },
-        },
-        keys = function()
-            local oil = require("oil")
-
-            vim.keymap.set("n", "<leader>oo", function()
-                oil.open()
-            end)
-        end,
-        dependencies = { "nvim-tree/nvim-web-devicons" },
-    },
-    {
         "lewis6991/gitsigns.nvim",
         event = "BufEnter",
         keys = {
